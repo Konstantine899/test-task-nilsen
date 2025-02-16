@@ -1,0 +1,33 @@
+{
+  "name": "test-task-nilsen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Konstantine899/test-task-nilsen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Konstantine899/test-task-nilsen/issues"
+  },
+  "homepage": "https://github.com/Konstantine899/test-task-nilsen#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/webpack": "^5.28.5",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.6.3"
+  }
+}
