@@ -8,4 +8,5 @@ export type BuildPath = {
 export interface BuildOptions {
   mode: BuildMode;
   paths: BuildPath;
+  isDev: boolean;
 }
