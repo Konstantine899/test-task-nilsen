@@ -14,5 +14,6 @@ export function buildPlugins(options: BuildOptions): webpack.ProgressPlugin[] {
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ];
 }
