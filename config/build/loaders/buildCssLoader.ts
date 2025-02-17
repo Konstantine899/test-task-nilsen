@@ -1,27 +1,9 @@
-import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { BuildOptions } from "./types/config";
+import { BuildOptions } from "../types/config";
 
-export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+export function buildCssLoader(options: BuildOptions) {
   const { isDev } = options;
-
-  const babelLoader = {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: "babel-loader",
-      options: {
-        presets: ["@babel/preset-env"],
-      },
-    },
-  };
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: "ts-loader",
-    exclude: /node_modules/,
-  };
-
-  const cssLoader = {
+  return {
     test: /\.s[ac]ss$/i,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
@@ -40,6 +22,4 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       "sass-loader",
     ],
   };
-
-  return [babelLoader, typescriptLoader, cssLoader];
 }
