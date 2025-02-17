@@ -5,18 +5,20 @@ import { BuildPath } from "./config/build/types/config";
 import path from "path";
 
 const paths: BuildPath = {
-  entry: path.resolve(__dirname, "src", "index.tsx"),
+  entry: path.resolve(__dirname, "src", "index.js"),
   build: path.resolve(__dirname, "build"),
   html: path.resolve(__dirname, "public", "index.html"),
 };
 
 const mode = "development";
 const isDev = mode === "development";
+const PORT = 3000;
 
 const config: webpack.Configuration = buildWebpackConfig({
   mode: "development",
   paths,
   isDev,
+  port: PORT,
 });
 
 export default config;
