@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.scss";
+import * as slc from "./App.module.scss";
 
 const App = () => {
-  return <div className={"app"}>ededed</div>;
+  return <div className={slc.app}>ededed</div>;
 };
 
 export default App;
