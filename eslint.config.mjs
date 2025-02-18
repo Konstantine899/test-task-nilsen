@@ -12,8 +12,7 @@ export default [
     plugins: { react, "react-hooks": hooksPlugin },
     languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } },
     rules: {
-      "react/jsx-uses-react": "error",
-      "react/jsx-uses-vars": "error",
+      "react/react-in-jsx-scope": "off",
       ...hooksPlugin.configs.recommended.rules,
     },
   },
