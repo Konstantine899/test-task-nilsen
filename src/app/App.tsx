@@ -1,8 +1,18 @@
 import React from "react";
-import * as slc from "./App.module.scss";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "app/navbar/Navbar";
+import "./styles/index.scss";
 
 const App = () => {
-  return <div className={slc.app}>ededed</div>;
+  return (
+    <div className="app">
+      <Navbar />
+      <Routes>
+        <Route path={"/about"} element={<div>about</div>} />
+        <Route path={"/"} element={<div>Главная</div>} />
+      </Routes>
+    </div>
+  );
 };
 
 export default App;

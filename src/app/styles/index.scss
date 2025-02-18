@@ -1,0 +1,19 @@
+@use "./reset";
+@use "./variables/color";
+@use "./variables/sizes";
+@use "./variables/font-sizes";
+
+body{
+  font-size: 14px;
+  height: 100vh;
+  width: 100vw;
+  font-family: Roboto, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.content_page {
+  display: flex;
+}
