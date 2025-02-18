@@ -1,4 +1,5 @@
 :root{
   /* Navbar */
-  --navbar-height: 64px
+  --navbar-height: 64px;
+  --page-height: calc(100vh - var(--navbar-height));
 };
