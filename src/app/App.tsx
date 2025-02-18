@@ -2,16 +2,16 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "app/navbar/Navbar";
 import "./styles/index.scss";
-import { CatsPage } from "pages/cats";
-import { FavoritesPage } from "pages/favorites";
+import { routeConfig } from "shared/config/routeConfig";
 
 const App = () => {
   return (
     <div className="app">
       <Navbar />
       <Routes>
-        <Route path={"/favorites"} element={<FavoritesPage />} />
-        <Route path={"/"} element={<CatsPage />} />
+        {Object.values(routeConfig).map(({ element, path }) => (
+          <Route key={path} element={element} path={path} />
+        ))}
       </Routes>
     </div>
   );
