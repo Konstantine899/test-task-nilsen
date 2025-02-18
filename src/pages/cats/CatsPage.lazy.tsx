@@ -1,9 +1,10 @@
 import React, { lazy, Suspense } from "react";
+import PageLoader from "widgets/page-loader/PageLoader";
 
 const CatsPageLazy = lazy(() => import("./CatsPage"));
 
 export const CatsPageAsync = () => (
-  <Suspense fallback={<div>Loading</div>}>
+  <Suspense fallback={<PageLoader />}>
     <CatsPageLazy />
   </Suspense>
 );
