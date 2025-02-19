@@ -16,7 +16,7 @@ export default [
       ...hooksPlugin.configs.recommended.rules,
     },
   },
-  { languageOptions: { globals: globals.browser } },
+  { languageOptions: { globals: { __IS_DEV__: true, ...globals.browser } } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
