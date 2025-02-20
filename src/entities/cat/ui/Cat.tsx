@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { ICat } from "pages/cats/model/types/ICat";
 import { classNames } from "shared/lib/classNames";
 import * as styles from "./Cat.module.scss";
-import FavoriteBorderIcon from "shared/assets/favorite_border.svg";
-import FavoriteIcon from "shared/assets/favorite.svg";
+import FavoriteButton from "features/favorite/ui/FavoriteButton/FavoriteButton";
 
 interface CatProps {
   cat: ICat;
@@ -11,17 +10,12 @@ interface CatProps {
 
 export const Cat = (props: CatProps) => {
   const { cat } = props;
-  const [showHeart, setShowHeart] = useState(false);
+
+  console.log(cat);
   return (
     <div className={classNames(styles.catItem)}>
       <img src={cat.url} alt={cat.id} />
-      <div
-        className={styles.heartContainer}
-        onMouseEnter={() => setShowHeart(true)}
-        onMouseLeave={() => setShowHeart(false)}
-      >
-        {showHeart ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-      </div>
+      <FavoriteButton catId={cat.id} className={styles.heartContainer} />
     </div>
   );
 };

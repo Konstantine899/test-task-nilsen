@@ -2,10 +2,11 @@ import { configureStore, ThunkDispatch, UnknownAction } from "@reduxjs/toolkit";
 import { IStateSchema } from "./IStateSchema";
 import { catsReducer } from "pages/cats";
 import api from "shared/config/api";
+import { favoriteReducer } from "features/favorite";
 
 export function createReduxStore(initialState: IStateSchema) {
   return configureStore<IStateSchema>({
-    reducer: { cats: catsReducer },
+    reducer: { cats: catsReducer, favorite: favoriteReducer },
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
