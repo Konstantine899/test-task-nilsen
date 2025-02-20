@@ -1,6 +1,6 @@
 import { ICat } from "pages/cats/model/types/ICat";
 
-export interface CatsSchema {
+export interface ICatsSchema {
   cats: ICat[];
   isLoading: boolean;
   error: string | null;

@@ -1,12 +1,11 @@
 import { configureStore, ThunkDispatch, UnknownAction } from "@reduxjs/toolkit";
-import { StateSchema } from "./StateSchema";
-import { counterReducer } from "entities/counter";
+import { IStateSchema } from "./IStateSchema";
 import { catsReducer } from "pages/cats";
 import api from "shared/config/api";
 
-export function createReduxStore(initialState: StateSchema) {
-  return configureStore<StateSchema>({
-    reducer: { counter: counterReducer, cats: catsReducer },
+export function createReduxStore(initialState: IStateSchema) {
+  return configureStore<IStateSchema>({
+    reducer: { cats: catsReducer },
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
@@ -18,7 +17,7 @@ export type RootState = ReturnType<typeof createReduxStore> extends {
   getState: () => infer S;
 }
   ? S
-  : StateSchema;
+  : IStateSchema;
 
 // Определяем AppDispatch на основе типа возвращаемого значения createReduxStore
 export type AppDispatch = ThunkDispatch<RootState, undefined, UnknownAction>;

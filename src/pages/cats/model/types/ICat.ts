@@ -1,9 +1,9 @@
-interface Weight {
+interface IWeight {
   imperial: string;
   metric: string;
 }
 
-interface Breed {
+interface IBreed {
   adaptability: number;
   affection_level: number;
   bidability: number;
@@ -40,7 +40,7 @@ interface Breed {
   vcahospitals_url: string;
   vetstreet_url: string;
   vocalisation: number;
-  weight: Weight; // Добавлено поле weight
+  weight: IWeight; // Добавлено поле weight
   wikipedia_url: string; // Добавлено поле wikipedia_url
 }
 
@@ -49,5 +49,5 @@ export interface ICat {
   url: string;
   width: number;
   height: number;
-  breeds: Breed[];
+  breeds: IBreed[];
 }
