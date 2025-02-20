@@ -1,0 +1,14 @@
+.Card {
+  display: inline-flex;
+}
+
+
+.outlined {
+  &:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 4px rgb(0 0 0 / 10%);
+    transform: scale(1.1);
+    z-index: 1;
+  }
+}
+
