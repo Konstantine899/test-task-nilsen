@@ -1,9 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ExtraArgument } from "app/providers/store-provider/config/store";
-
-export interface Cat {
-  id: number;
-}
+import { Cat } from "pages/cats/model/types/cat";
 
 export const fetchCats = createAsyncThunk<
   Cat[],

@@ -1,4 +1,4 @@
-import { Cat } from "pages/cats/model/api/fetchCats";
+import { Cat } from "pages/cats/model/types/cat";
 
 export interface CatsSchema {
   cats: Cat[];

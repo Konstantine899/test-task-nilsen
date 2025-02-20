@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Cat, fetchCats } from "pages/cats/model/api/fetchCats";
+import { fetchCats } from "pages/cats/model/api/fetchCats";
 
 import { CatsSchema } from "pages/cats/model/types/CatsSchema";
+import { Cat } from "pages/cats/model/types/cat";
 
 const initialState: CatsSchema = {
   cats: [],
