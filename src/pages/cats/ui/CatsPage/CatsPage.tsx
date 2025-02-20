@@ -37,5 +37,6 @@ const CatsPage = () => {
     );
   }
 };
+CatsPage.displayName = "CatsPage";
 
 export default CatsPage;

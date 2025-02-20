@@ -8,4 +8,6 @@ const FavoritesPage = () => {
   );
 };
 
+FavoritesPage.displayName = "FavoritesPage";
+
 export default FavoritesPage;

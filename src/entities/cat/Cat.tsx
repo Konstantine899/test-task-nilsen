@@ -6,9 +6,9 @@ interface CatProps {
   cat: ICat;
 }
 
-const Cat = (props: CatProps) => {
+export const Cat = (props: CatProps) => {
   const { cat } = props;
   return <Card theme={CardTheme.OUTLINED}>{cat.id}</Card>;
 };
 
-export default Cat;
+Cat.displayName = "Cat";

@@ -2,7 +2,7 @@ import React from "react";
 import { ICat } from "pages/cats/model/types/ICat";
 import * as styles from "./CatsList.module.scss";
 import { classNames } from "shared/lib/classNames";
-import Cat from "entities/cat/Cat";
+import { Cat } from "entities/cat/Cat";
 
 interface CatsListProps {
   cats: ICat[];
@@ -18,3 +18,5 @@ export const CatsList = (props: CatsListProps) => {
     </div>
   );
 };
+
+CatsList.displayName = "CatsList";
