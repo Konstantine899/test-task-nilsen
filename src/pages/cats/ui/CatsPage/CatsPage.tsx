@@ -9,6 +9,7 @@ import {
   getCatsError,
   getCatsLoading,
 } from "pages/cats/model/selectors/selectors";
+import { CatsList } from "pages/cats/ui/CatsList/CatsList";
 
 const CatsPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -28,9 +29,15 @@ const CatsPage = () => {
     return <div>Error: {error}</div>;
   }
 
-  console.log(cats);
-
-  return <div className={classNames(styles["cats-page"])}>CatsPage</div>;
+  if (!isLoading) {
+    return (
+      <div className={classNames(styles["cats-page"])}>
+        {cats.map((cat) => (
+          <CatsList key={cat.id} cat={cat} />
+        ))}
+      </div>
+    );
+  }
 };
 
 export default CatsPage;
