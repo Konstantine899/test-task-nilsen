@@ -32,9 +32,7 @@ const CatsPage = () => {
   if (!isLoading) {
     return (
       <div className={classNames(styles["cats-page"])}>
-        {cats.map((cat) => (
-          <CatsList key={cat.id} cat={cat} />
-        ))}
+        <CatsList cats={cats} />
       </div>
     );
   }

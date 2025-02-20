@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchCats } from "pages/cats/model/api/fetchCats";
 
 import { CatsSchema } from "pages/cats/model/types/CatsSchema";
-import { Cat } from "pages/cats/model/types/cat";
+import { ICat } from "pages/cats/model/types/ICat";
 
 const initialState: CatsSchema = {
   cats: [],
@@ -20,7 +20,7 @@ export const catsSlice = createSlice({
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(fetchCats.fulfilled, (state, action: PayloadAction<Cat[]>) => {
+      .addCase(fetchCats.fulfilled, (state, action: PayloadAction<ICat[]>) => {
         state.isLoading = false;
         state.cats = action.payload;
         state.error = null;

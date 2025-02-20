@@ -1,13 +1,20 @@
 import React from "react";
-import { Cat } from "pages/cats/model/types/cat";
-import { Card, CardTheme } from "shared/ui/Card/Card";
+import { ICat } from "pages/cats/model/types/ICat";
+import * as styles from "./CatsList.module.scss";
+import { classNames } from "shared/lib/classNames";
+import Cat from "entities/cat/Cat";
 
 interface CatsListProps {
-  cat: Cat;
+  cats: ICat[];
 }
 
 export const CatsList = (props: CatsListProps) => {
-  const { cat } = props;
-  console.log(cat.url);
-  return <Card theme={CardTheme.OUTLINED}>{`Кот: ${cat.id}`}</Card>;
+  const { cats } = props;
+  return (
+    <div className={classNames(styles.catsList)}>
+      {cats.map((cat) => (
+        <Cat key={cat.id} cat={cat} />
+      ))}
+    </div>
+  );
 };

@@ -44,7 +44,7 @@ interface Breed {
   wikipedia_url: string; // Добавлено поле wikipedia_url
 }
 
-export interface Cat {
+export interface ICat {
   id: string;
   url: string;
   width: number;
