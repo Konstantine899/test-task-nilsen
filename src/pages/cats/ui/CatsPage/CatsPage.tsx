@@ -10,6 +10,7 @@ import {
   getCatsLoading,
 } from "pages/cats/model/selectors/selectors";
 import { CatsList } from "pages/cats/ui/CatsList/CatsList";
+import PageLoader from "widgets/page-loader/PageLoader";
 
 const CatsPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -22,7 +23,7 @@ const CatsPage = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <PageLoader />;
   }
 
   if (error) {
