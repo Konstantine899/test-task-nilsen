@@ -1,3 +1,9 @@
 .cats-page{
   height: var(--page-height);
 }
+
+.loading-cats-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

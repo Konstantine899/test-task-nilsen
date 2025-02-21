@@ -20,16 +20,10 @@ export const CatsList = (props: CatsListProps) => {
   const error = useSelector(getCatsError);
 
   if (isLoading) {
-    const array = Array(10).fill(0);
     return (
       <div className={classNames(styles.catsList)}>
-        {array.map((item) => (
-          <Skeleton
-            key={item.id}
-            width={256}
-            height={256}
-            borderRadius={"5px"}
-          />
+        {Array.from({ length: 10 }, (_, index) => (
+          <Skeleton key={index} width={256} height={256} borderRadius={"5px"} />
         ))}
       </div>
     );
@@ -41,8 +35,8 @@ export const CatsList = (props: CatsListProps) => {
 
   return (
     <div className={classNames(styles.catsList)}>
-      {cats.map((cat) => (
-        <Cat key={cat.id} cat={cat} />
+      {cats.map((cat, index) => (
+        <Cat key={index} cat={cat} />
       ))}
     </div>
   );

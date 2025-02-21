@@ -17,3 +17,13 @@ export const getCatsError = createSelector(
   getCatsState,
   (catsState) => catsState.error
 );
+
+export const getCatsHasMore = createSelector(
+  getCatsState,
+  (catsState) => catsState.hasMore
+);
+
+export const getCatsPage = createSelector(
+  getCatsState,
+  (catsState) => catsState.page
+);

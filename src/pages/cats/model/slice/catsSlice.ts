@@ -8,12 +8,18 @@ const initialState: ICatsSchema = {
   cats: [],
   isLoading: false,
   error: null,
+  page: 1,
+  hasMore: true,
 };
 
 export const catsSlice = createSlice({
   name: "catsSlice",
   initialState,
-  reducers: {},
+  reducers: {
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload;
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(fetchCats.pending, (state) => {
@@ -22,8 +28,12 @@ export const catsSlice = createSlice({
       })
       .addCase(fetchCats.fulfilled, (state, action: PayloadAction<ICat[]>) => {
         state.isLoading = false;
-        state.cats = action.payload;
         state.error = null;
+        if (action.payload.length > 0) {
+          state.cats = [...state.cats, ...action.payload];
+        } else {
+          state.hasMore = false; // если новых данных нет
+        }
       })
       .addCase(
         fetchCats.rejected,
