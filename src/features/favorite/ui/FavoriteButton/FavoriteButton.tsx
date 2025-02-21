@@ -22,7 +22,7 @@ const FavoriteButton = (props: FavoriteButtonProps) => {
     if (!isFavorite) {
       dispatch(favoriteAction.addFavorite(cat));
     }
-    favoriteAction.removeFavorite(cat.id);
+    dispatch(favoriteAction.removeFavorite(cat.id));
   };
 
   return (
