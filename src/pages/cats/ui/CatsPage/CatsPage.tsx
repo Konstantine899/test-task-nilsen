@@ -4,39 +4,22 @@ import { classNames } from "shared/lib/classNames";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCats } from "pages/cats";
 import { AppDispatch } from "app/providers/store-provider/config/store";
-import {
-  getCats,
-  getCatsError,
-  getCatsLoading,
-} from "pages/cats/model/selectors/selectors";
+import { getCats } from "pages/cats/model/selectors/selectors";
 import { CatsList } from "pages/cats/ui/CatsList/CatsList";
-import PageLoader from "widgets/page-loader/PageLoader";
 
 const CatsPage = () => {
   const dispatch = useDispatch<AppDispatch>();
   const cats = useSelector(getCats);
-  const isLoading = useSelector(getCatsLoading);
-  const error = useSelector(getCatsError);
 
   useEffect(() => {
     dispatch(fetchCats());
   }, [dispatch]);
 
-  if (isLoading) {
-    return <PageLoader />;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!isLoading) {
-    return (
-      <div className={classNames(styles["cats-page"])}>
-        <CatsList cats={cats} />
-      </div>
-    );
-  }
+  return (
+    <div className={classNames(styles["cats-page"])}>
+      <CatsList cats={cats} />
+    </div>
+  );
 };
 CatsPage.displayName = "CatsPage";
 
