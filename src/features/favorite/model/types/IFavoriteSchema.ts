@@ -1,3 +1,5 @@
+import { ICat } from "pages/cats/model/types/ICat";
+
 export interface IFavoriteSchema {
-  favoriteIds: string[];
+  favoriteCats: ICat[];
 }

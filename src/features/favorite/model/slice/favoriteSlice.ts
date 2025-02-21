@@ -1,25 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IFavoriteSchema } from "features/favorite/model/types/IFavoriteSchema";
+import { ICat } from "pages/cats/model/types/ICat";
 
 const initialState: IFavoriteSchema = {
-  favoriteIds: JSON.parse(localStorage.getItem("favoriteCats")) || [],
+  favoriteCats: JSON.parse(localStorage.getItem("favoriteCats")) || [],
 };
 
 export const favoriteSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
-    addFavorite: (state, action: PayloadAction<string>) => {
-      if (!state.favoriteIds.includes(action.payload)) {
-        state.favoriteIds.push(action.payload);
-        localStorage.setItem("favoriteCats", JSON.stringify(state.favoriteIds));
+    addFavorite: (state, action: PayloadAction<ICat>) => {
+      const exist = state.favoriteCats.some(
+        (cat) => cat.id === action.payload.id
+      );
+      if (!exist) {
+        state.favoriteCats.push(action.payload);
+        localStorage.setItem(
+          "favoriteCats",
+          JSON.stringify(state.favoriteCats)
+        );
       }
     },
     removeFavorite: (state, action: PayloadAction<string>) => {
-      state.favoriteIds = state.favoriteIds.filter(
-        (id) => id !== action.payload
+      state.favoriteCats = state.favoriteCats.filter(
+        (cat) => cat.id !== action.payload
       );
-      localStorage.setItem("favoriteCats", JSON.stringify(state.favoriteIds));
+      localStorage.setItem("favoriteCats", JSON.stringify(state.favoriteCats));
     },
   },
 });

@@ -11,11 +11,10 @@ interface CatProps {
 export const Cat = (props: CatProps) => {
   const { cat } = props;
 
-  console.log(cat);
   return (
     <div className={classNames(styles.catItem)}>
       <img src={cat.url} alt={cat.id} />
-      <FavoriteButton catId={cat.id} className={styles.heartContainer} />
+      <FavoriteButton cat={cat} className={styles.heartContainer} />
     </div>
   );
 };

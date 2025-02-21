@@ -6,22 +6,23 @@ import FavoriteBorderIcon from "shared/assets/favorite_border.svg";
 import { favoriteAction } from "features/favorite";
 import { classNames } from "shared/lib/classNames";
 import { isFavoriteSelector } from "features/favorite/model/selectors/selectors";
+import { ICat } from "pages/cats/model/types/ICat";
 
 interface FavoriteButtonProps {
-  catId: string;
+  cat: ICat;
   className?: string;
 }
 
 const FavoriteButton = (props: FavoriteButtonProps) => {
-  const { catId, className } = props;
+  const { cat, className } = props;
   const dispatch = useDispatch<AppDispatch>();
-  const isFavorite = useSelector(isFavoriteSelector(catId));
+  const isFavorite = useSelector(isFavoriteSelector(cat));
 
   const toggleFavorite = () => {
     if (!isFavorite) {
-      dispatch(favoriteAction.addFavorite(catId));
+      dispatch(favoriteAction.addFavorite(cat));
     }
-    favoriteAction.removeFavorite(catId);
+    favoriteAction.removeFavorite(cat.id);
   };
 
   return (
