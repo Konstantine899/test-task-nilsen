@@ -19,10 +19,11 @@ const FavoriteButton = (props: FavoriteButtonProps) => {
   const isFavorite = useSelector(isFavoriteSelector(cat));
 
   const toggleFavorite = () => {
-    if (!isFavorite) {
+    if (isFavorite) {
+      dispatch(favoriteAction.removeFavorite(cat.id));
+    } else {
       dispatch(favoriteAction.addFavorite(cat));
     }
-    dispatch(favoriteAction.removeFavorite(cat.id));
   };
 
   return (
