@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "app/providers/store-provider/config/store";
 import FavoriteIcon from "shared/assets/favorite.svg";
@@ -17,6 +17,7 @@ const FavoriteButton = (props: FavoriteButtonProps) => {
   const { cat, className } = props;
   const dispatch = useDispatch<AppDispatch>();
   const isFavorite = useSelector(isFavoriteSelector(cat));
+  const [isHover, setIsHover] = useState<boolean>(false);
 
   const toggleFavorite = () => {
     if (isFavorite) {
@@ -27,8 +28,13 @@ const FavoriteButton = (props: FavoriteButtonProps) => {
   };
 
   return (
-    <div className={classNames("", {}, [className])} onClick={toggleFavorite}>
-      {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+    <div
+      className={classNames("", {}, [className])}
+      onClick={toggleFavorite}
+      onMouseOver={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+    >
+      {isFavorite || isHover ? <FavoriteIcon /> : <FavoriteBorderIcon />}
     </div>
   );
 };
