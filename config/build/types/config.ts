@@ -11,6 +11,7 @@ export interface BuildOptions {
   paths: BuildPath;
   isDev: boolean;
   port: number;
+  api_key: string;
 }
 
 export interface BuildEnv {
