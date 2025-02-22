@@ -1,10 +1,11 @@
-import { BuildOptions } from "../types/config";
+import {BuildOptions} from "../types/config";
+import webpack from "webpack";
 
 interface BuildBabelLoaderProps extends BuildOptions {
   isTsx: boolean;
 }
 
-export function buildBabelLoader(options: BuildBabelLoaderProps) {
+export function buildBabelLoader(options: BuildBabelLoaderProps): webpack.RuleSetRule {
   const { isTsx } = options;
   return {
     test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,

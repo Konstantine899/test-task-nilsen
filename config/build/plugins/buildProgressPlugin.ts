@@ -1,5 +1,5 @@
 import webpack from "webpack";
 
-export function buildProgressPlugin() {
+export function buildProgressPlugin():webpack.ProgressPlugin {
   return new webpack.ProgressPlugin();
 }

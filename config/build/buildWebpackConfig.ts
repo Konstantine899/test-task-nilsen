@@ -1,9 +1,9 @@
-import { BuildOptions } from "./types/config";
+import {BuildOptions} from "./types/config";
 import webpack from "webpack";
-import { buildPlugins } from "./plugins/buildPlugins";
-import { buildLoaders } from "./loaders/buildLoaders";
-import { buildResolvers } from "./buildResolvers";
-import { buildDevServer } from "./buildDevServer";
+import {buildPlugins} from "./plugins/buildPlugins";
+import {buildLoaders} from "./loaders/buildLoaders";
+import {buildResolvers} from "./buildResolvers";
+import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpackConfig(
   options: BuildOptions

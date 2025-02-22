@@ -1,7 +1,7 @@
 type Func = (...args: any[]) => void;
 
 export function throttle<T extends Func>(func: T, limit: number): T {
-    let inThrottle: boolean = false; 
+    let inThrottle: boolean = false;
     let savedThis: any = null;
     let savedArgs: any[] | null = null;
 
