@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import * as styles from "./CatsPage.module.scss";
-import { classNames } from "shared/lib/classNames";
-import { useDispatch, useSelector } from "react-redux";
-import { catsAction, fetchCats } from "pages/cats";
-import { AppDispatch } from "app/providers/store-provider/config/store";
-import {
-  getCats,
-  getCatsHasMore,
-  getCatsLoading,
-  getCatsPage,
-} from "pages/cats/model/selectors/selectors";
-import { CatsList } from "pages/cats/ui/CatsList/CatsList";
+import {classNames} from "shared/lib/classNames";
+import {useDispatch, useSelector} from "react-redux";
+import {catsAction, fetchCats} from "pages/cats";
+import {AppDispatch} from "app/providers/store-provider/config/store";
+import {getCats, getCatsHasMore, getCatsLoading, getCatsPage,} from "pages/cats/model/selectors/selectors";
+import {CatsList} from "pages/cats/ui/CatsList/CatsList";
+import {throttle} from 'shared/lib/throttle'
 
 const CatsPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -23,20 +19,25 @@ const CatsPage = () => {
     dispatch(fetchCats());
   }, [dispatch, page]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (
+// Обработчик прокрутки с throttle
+  const handleScroll = throttle(() => {
+    if (
         window.innerHeight + document.documentElement.scrollTop >=
-        document.documentElement.scrollHeight - 1
-      ) {
-        dispatch(catsAction.setPage(page + 1));
-      }
-    };
+        document.documentElement.scrollHeight - 1 &&
+        hasMore &&
+        !isLoading
+    ) {
+      dispatch(catsAction.setPage(page + 1));
+    }
+  }, 300); // Ограничение на 300 мс
 
+  useEffect(() => {
+    // Добавляем слушатель прокрутки с throttle
     window.addEventListener("scroll", handleScroll);
 
+    // Удаляем слушатель при размонтировании компонента
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [dispatch, page, hasMore, isLoading]);
+  }, [handleScroll, hasMore, isLoading]);
 
   return (
     <div className={classNames(styles["cats-page"])}>
