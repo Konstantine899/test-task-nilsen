@@ -1,9 +1,9 @@
 import React from "react";
-import { ICat } from "pages/cats/model/types/ICat";
-import { classNames } from "shared/lib/classNames";
+import {ICat} from "pages/cats/model/types/ICat";
+import {classNames} from "shared/lib/classNames";
 import * as styles from "./Cat.module.scss";
 import FavoriteButton from "features/favorite/ui/FavoriteButton/FavoriteButton";
-import { UiKitImage } from "shared/ui/UIKitImage/UIKitImage";
+import {UiKitImage} from "shared/ui/UIKitImage/UIKitImage";
 import NotFoundImage from "shared/assets/not-found-image.jpg";
 
 interface CatProps {
@@ -14,9 +14,9 @@ export const Cat = (props: CatProps) => {
   const { cat } = props;
 
   return (
-    <div className={classNames(styles.catItem)}>
+    <div className={classNames(styles['cat-item'])}>
       <UiKitImage src={cat.url} alt={cat.id} spareImage={<NotFoundImage />} />
-      <FavoriteButton cat={cat} className={styles.heartContainer} />
+      <FavoriteButton cat={cat} className={styles['heart-container']} />
     </div>
   );
 };

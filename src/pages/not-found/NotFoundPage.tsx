@@ -3,7 +3,7 @@ import * as styles from "./NotFoundPage.module.scss";
 
 const NotFoundPage = () => {
   return (
-    <div className={styles.notFoundContainer}>
+    <div className={styles["not-found-page"]}>
       <h1 className={styles.title}>404 - Страница не найдена</h1>
       <p className={styles.message}>
         К сожалению, запрашиваемая страница не существует.

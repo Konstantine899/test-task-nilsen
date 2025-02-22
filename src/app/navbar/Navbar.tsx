@@ -1,6 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { classNames } from "shared/lib/classNames";
+import {NavLink} from "react-router-dom";
+import {classNames} from "shared/lib/classNames";
 import * as styles from "./Navbar.module.scss";
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
           <NavLink
             to={"/"}
             className={({ isActive }) =>
-              classNames(styles.link, { [styles.activeLink]: isActive })
+              classNames(styles.link, { [styles['active-link']]: isActive })
             }
           >
             Все котики
@@ -21,7 +21,7 @@ const Navbar = () => {
           <NavLink
             to={"/favorites"}
             className={({ isActive }) =>
-              classNames(styles.link, { [styles.activeLink]: isActive })
+              classNames(styles.link, { [styles['active-link']]: isActive })
             }
           >
             Любимые котики

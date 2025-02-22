@@ -4,10 +4,6 @@
   height: var(--navbar-height);
   background-color: var(--navbar-primary-color);
 
-  li:first-child {
-    padding-left: 50px;
-  }
-
   ul {
     display: flex;
     flex-direction: row;
@@ -21,6 +17,9 @@
   }
 }
 
+.nav li:first-child {
+  padding-left: 50px;
+}
 
 .link {
   display: flex;
@@ -36,8 +35,7 @@
   }
 }
 
-.activeLink {
-  composes: link;
+.active-link {
   background-color: var(--active-link-pimary-color);
   font-weight: bold;
   color: var(--font-inverted-color);

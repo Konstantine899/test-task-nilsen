@@ -1,16 +1,16 @@
-.catItem {
+.cat-item {
   width: 100%;
   aspect-ratio: 1 / 1;
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
   }
 
   img {
@@ -22,19 +22,22 @@
     object-fit: cover;
   }
 
-  .heartContainer {
+  .heart-container {
     position: absolute;
     bottom: 10px;
     right: 10px;
     width: 48px;
     height: 48px;
-    /* background-color: rgba(255, 0, 0, 0.5); */ /* Для отладки */
+
+    /* background-color: rgba(255, 0, 0, 0.5); */
+
+ /* Для отладки */
     opacity: 0; /* Делаем блок невидимым */
     transition: opacity 0.2s ease-in-out; /* Плавное появление */
     cursor: pointer; /* Меняем курсор при наведении */
   }
 
-  &:hover .heartContainer {
+  &:hover .heart-container {
     opacity: 1; /* Показываем при наведении на CatItem */
   }
 
