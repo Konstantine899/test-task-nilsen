@@ -12,6 +12,7 @@ export interface BuildOptions {
   isDev: boolean;
   port: number;
   api_key: string;
+  outputFilename?: string;
 }
 
 export interface BuildEnv {
