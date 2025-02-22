@@ -1,8 +1,8 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Navbar from "app/navbar/Navbar";
+import {Route, Routes} from "react-router-dom";
+import Navbar from "widgets/navbar/Navbar";
 import "./styles/index.scss";
-import { routeConfig } from "shared/config/routeConfig";
+import {routeConfig} from "shared/config/routeConfig";
 
 const App = () => {
   return (
