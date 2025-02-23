@@ -1,5 +1,5 @@
-import { ICat } from "pages/cats/model/types/ICat";
+import {ICat} from "pages/cats/model/types/ICat";
 
 export interface IFavoriteSchema {
-  favoriteCats: ICat[];
+  favoriteCats: ICat[]; // массив избранных котиков
 }
