@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/Konstantine899/test-task-nilsen/issues"
   },
-  "homepage": "https://github.com/Konstantine899/test-task-nilsen#readme",
+  "homepage": "https://konstantine899.github.io/test-task-nilsen/",
   "devDependencies": {
     "@babel/core": "^7.26.9",
     "@babel/plugin-transform-runtime": "^7.26.9",

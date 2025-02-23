@@ -13,6 +13,7 @@ export interface BuildOptions {
   port: number;
   api_key: string;
   outputFilename?: string;
+  publicPath: string;
 }
 
 export interface BuildEnv {

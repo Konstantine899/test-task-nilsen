@@ -90,3 +90,5 @@ declare const __IS_DEV__: boolean;
  * Значение должно быть определено в переменных окружения (.env файлах).
  */
 declare const __API_KEY__: string;
+
+declare const __PUBLIC_PATH__: string;

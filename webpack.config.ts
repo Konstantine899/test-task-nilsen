@@ -19,6 +19,7 @@ export default (env: BuildEnv):WebpackConfiguration => {
   const api_key: string = "live_OIalWbPJ3RyJ5KCeUz3SfrgvPuJPz3CTxFWELO6hZtl7NJxPYOn8bI2IQ7JuZulM";
   const PORT: number = env.port || 3000;
   const outputFilename: string = "[name].[contenthash].js"
+  const publicPath: string = isDev ? '' :"/test-task-nilsen/";
 
   const config: webpack.Configuration = buildWebpackConfig({
     mode: DEVELOPMENT_MODE,
@@ -26,7 +27,8 @@ export default (env: BuildEnv):WebpackConfiguration => {
     isDev,
     port: PORT,
     api_key,
-    outputFilename
+    outputFilename,
+     publicPath
   });
 
   return config;

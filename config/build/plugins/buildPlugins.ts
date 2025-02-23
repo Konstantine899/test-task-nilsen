@@ -15,7 +15,8 @@ export function buildPlugins(options: BuildOptions): webpack.ProgressPlugin[] {
     buildForkTsCheckerWebpackPlugin(),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(options.isDev),
-      __API_KEY__: JSON.stringify(options.api_key)
+      __API_KEY__: JSON.stringify(options.api_key),
+      __PUBLIC_PATH__: JSON.stringify(options.publicPath)
     }),
   ];
 }

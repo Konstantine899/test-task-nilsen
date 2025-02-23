@@ -22,7 +22,7 @@ const AppLazy = lazy(() => import("./App"));
 export const AppAsync = () => (
     <ErrorBoundary> {/* Глобальная обработка ошибок */}
         <StoreProvider> {/* Провайдер Redux store */}
-            <BrowserRouter> {/* Маршрутизация через React Router */}
+            <BrowserRouter basename={__PUBLIC_PATH__}> {/* Маршрутизация через React Router */}
                 <Suspense fallback={<PageLoader/>}> {/* Заглушка для ленивой загрузки */}
                     <AppLazy/> {/* Ленивая загрузка основного приложения */}
                 </Suspense>
