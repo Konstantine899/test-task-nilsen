@@ -7,6 +7,15 @@ import {useSelector} from "react-redux";
 import {getCatsError, getCatsLoading,} from "pages/cats/model/selectors/selectors";
 import {Skeleton} from "shared/ui/Skeleton/Skeleton";
 
+
+/**
+ * Компонент CatsList отображает список котиков с поддержкой заглушек и обработкой ошибок.
+ *
+ * @param props.cats - Массив котиков для отображения.
+ * @param props.skeletonCount - Количество заглушек (необязательно, по умолчанию 10).
+ * @returns JSX-элемент списка котиков.
+ */
+
 interface CatsListProps {
   cats: ICat[];
 }
@@ -16,6 +25,7 @@ export const CatsList = (props: CatsListProps) => {
   const isLoading = useSelector(getCatsLoading);
   const error = useSelector(getCatsError);
 
+  // Если данные загружаются, показываем заглушки
   if (isLoading) {
     return (
       <div className={classNames(styles['cats-list'])}>
@@ -26,10 +36,12 @@ export const CatsList = (props: CatsListProps) => {
     );
   }
 
+  // Если произошла ошибка, показываем сообщение
   if (error) {
-    return <div className={classNames(styles['cats-list'])}>error</div>;
+    return <div className={classNames(styles['cats-list'])}><p>{error}</p></div>;
   }
 
+  // Если данные загружены, показываем список котиков
   return (
     <div className={classNames(styles['cats-list'])}>
       {cats.map((cat, index) => (
@@ -39,4 +51,5 @@ export const CatsList = (props: CatsListProps) => {
   );
 };
 
+// Устанавливаем displayName для отладки
 CatsList.displayName = "CatsList";
