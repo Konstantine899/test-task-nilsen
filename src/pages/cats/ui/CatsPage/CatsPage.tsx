@@ -16,31 +16,46 @@ import {throttle} from 'shared/lib/throttle';
  */
 
 const CatsPage = () => {
+  /**
+   * Селекторы для получения состояния из Redux.
+   */
   const dispatch = useDispatch<AppDispatch>();
-  const cats = useSelector(getCats);
-  const hasMore = useSelector(getCatsHasMore);
-  const page = useSelector(getCatsPage);
-  const isLoading = useSelector(getCatsLoading);
+  const cats = useSelector(getCats); // Массив котиков
+  const hasMore = useSelector(getCatsHasMore); // Флаг наличия дополнительных данных
+  const page = useSelector(getCatsPage); // Текущая страница пагинации
+  const isLoading = useSelector(getCatsLoading); // Флаг загрузки
 
-  // Загрузка данных при монтировании компонента
+  /**
+   * Эффект для первоначальной загрузки данных при монтировании компонента.
+   */
+
   useEffect(() => {
-    dispatch(fetchCats());
+    dispatch(fetchCats()); // Загружаем данные для текущей страницы
   }, [dispatch, page]);
 
-// Обработчик прокрутки с throttle
+  /**
+   * Обработчик прокрутки страницы с использованием throttle.
+   * Если пользователь прокрутил страницу до конца, вызывается действие setPage для загрузки следующей порции данных.
+   */
+
   const handleScroll = throttle(() => {
     if (
         window.innerHeight + document.documentElement.scrollTop >=
-        document.documentElement.scrollHeight - 1 &&
-        hasMore &&
-        !isLoading
+        document.documentElement.scrollHeight - 1 && // Проверяем, что достигнут конец страницы
+        hasMore && // Есть ли ещё данные для загрузки
+        !isLoading // Не выполняется ли уже загрузка
     ) {
-      dispatch(catsAction.setPage(page + 1));
+      dispatch(catsAction.setPage(page + 1)); // Увеличиваем номер страницы для загрузки следующей порции
     }
-  }, 300); // Ограничение на 300 мс
+  }, 300); // Ограничение на 300 мс между вызовами обработчика
+
+
+  /**
+   * Эффект для добавления и удаления слушателя прокрутки.
+   */
 
   useEffect(() => {
-    // Добавляем слушатель прокрутки с throttle
+    // Добавляем слушатель прокрутки
     window.addEventListener("scroll", handleScroll);
 
     // Удаление слушателя при размонтировании компонента
