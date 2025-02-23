@@ -1,0 +1,98 @@
+/*!************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/widgets/navbar/Navbar.module.scss ***!
+  \************************************************************************************************************************************************************/
+.WQ_eG6HW {
+  display: flex;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--navbar-primary-color);
+}
+.WQ_eG6HW ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.WQ_eG6HW ul li {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-m);
+}
+
+.WQ_eG6HW li:first-child {
+  padding-left: 50px;
+}
+
+.rt36Tn5B {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--font-primary-color);
+  padding: 0 10px;
+  height: 100%;
+}
+.rt36Tn5B:hover {
+  background-color: var(--active-link-pimary-color);
+}
+
+.TVcKVqpa {
+  background-color: var(--active-link-pimary-color);
+  font-weight: bold;
+  color: var(--font-inverted-color);
+}
+/*!************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/index.scss ***!
+  \************************************************************************************************************************************************/
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #1e88e5;
+  /* Navbar */
+  --navbar-primary-color: #2196f3;
+  /* Font-color */
+  --font-primary-color: #bcdffb;
+  --font-inverted-color: #fff;
+  /* Link */
+  --active-link-pimary-color: #1e88e5;
+  /* Skeleton */
+  --primary-skeleton: #86dafb;
+}
+
+:root {
+  /* Navbar */
+  --navbar-height: 64px;
+  --page-height: calc(100vh - var(--navbar-height));
+}
+
+:root {
+  /* Размеры шрифтов */
+  --font-family-main: "Roboto", sans-serif;
+  --font-line-s: 20px;
+  --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+  --font-line-m: 24px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+  --font-line-l: 32px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+}
+
+body {
+  font-size: 14px;
+  height: 100vh;
+  width: 100vw;
+  font-family: Roboto, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+}

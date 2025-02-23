@@ -1,0 +1,101 @@
+/*!**********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/pages/cats/ui/CatsPage/CatsPage.module.scss ***!
+  \**********************************************************************************************************************************************************************/
+.SmIiWry1 {
+  height: var(--page-height);
+}
+
+.QCdem_Of {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*!**********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/pages/cats/ui/CatsList/CatsList.module.scss ***!
+  \**********************************************************************************************************************************************************************/
+.LRegqTZr {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  justify-items: center;
+}
+/*!**********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/entities/cat/ui/Cat.module.scss ***!
+  \**********************************************************************************************************************************************************/
+@charset "UTF-8";
+.kvvN_YeD {
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+.kvvN_YeD:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.kvvN_YeD img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kvvN_YeD .nbagcbd0 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 48px;
+  height: 48px;
+  /* background-color: rgba(255, 0, 0, 0.5); */
+  /* Для отладки */
+  opacity: 0; /* Делаем блок невидимым */
+  transition: opacity 0.2s ease-in-out; /* Плавное появление */
+  cursor: pointer; /* Меняем курсор при наведении */
+}
+.kvvN_YeD:hover .nbagcbd0 {
+  opacity: 1; /* Показываем при наведении на CatItem */
+}
+.kvvN_YeD svg {
+  width: 100%;
+  height: 100%;
+  fill: red; /* Цвет сердца */
+}
+/*!**********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/ui/UIKitImage/UIKitImage.module.scss ***!
+  \**********************************************************************************************************************************************************************/
+.PYzmhSxT {
+  display: none;
+}
+/*!******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/ui/Skeleton/Skeleton.module.scss ***!
+  \******************************************************************************************************************************************************************/
+.JsWaWXau {
+  position: relative;
+  box-shadow: 0 2px 10px 0 var(--primary-color);
+  overflow: hidden;
+}
+.JsWaWXau::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 0;
+  height: 100%;
+  width: 80%;
+  background: linear-gradient(to right, transparent 0%, var(--primary-skeleton) 50%, transparent 100%);
+  animation: enVUx1yk 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes enVUx1yk {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
+}
