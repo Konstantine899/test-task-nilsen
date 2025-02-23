@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchCats } from "pages/cats/model/api/fetchCats";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {fetchCats} from "pages/cats/model/api/fetchCats";
 
-import { ICatsSchema } from "pages/cats/model/types/ICatsSchema";
-import { ICat } from "pages/cats/model/types/ICat";
+import {ICatsSchema} from "pages/cats/model/types/ICatsSchema";
+import {ICat} from "pages/cats/model/types/ICat";
 
 const initialState: ICatsSchema = {
   cats: [],
@@ -35,13 +35,10 @@ export const catsSlice = createSlice({
           state.hasMore = false; // если новых данных нет
         }
       })
-      .addCase(
-        fetchCats.rejected,
-        (state, action: PayloadAction<string | null>) => {
-          state.isLoading = false;
-          state.error = action.payload;
-        }
-      ),
+        .addCase(fetchCats.rejected, (state, action: any) => {
+            state.isLoading = false;
+            state.error = action.payload || "Произошла ошибка";
+        })
 });
 
 export const { actions: catsAction } = catsSlice;

@@ -10,7 +10,7 @@ interface ErrorBoundaryProps {
 interface ErrorBoundaryState {
     hasError: boolean;
     error?: Error;
-    errorInfo?: string;
+    errorInfo?: string | null | undefined;
 }
 
 /**
@@ -24,7 +24,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     // Инициализация состояния
     constructor(props: ErrorBoundaryProps) {
         super(props);
-        this.state = {hasError: false, error: undefined, errorInfo:''};
+        this.state = {hasError: false, error: undefined, errorInfo: ''};
     }
 
     // Обработка ошибок в дереве компонентов
@@ -51,7 +51,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
 
     // Рендеринг
     render(): ReactNode {
-        const { hasError, error,errorInfo } = this.state;
+        const {hasError, error, errorInfo} = this.state;
         if (hasError) {
             return (
                 <div className={styles["error-boundary"]}>
