@@ -1102,7 +1102,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"error-boundary\": () => (/* binding */ _1),\n/* harmony export */   \"error-details\": () => (/* binding */ _2),\n/* harmony export */   \"retry-button\": () => (/* binding */ _3)\n/* harmony export */ });\n// extracted by mini-css-extract-plugin\nvar _1 = \"qbN3Ka9Z\";\nvar _2 = \"nx5icXIl\";\nvar _3 = \"U1Vx9ja5\";\n\n\n    if(true) {\n      (function() {\n        var localsJsonString = \"{\\\"error-boundary\\\":\\\"qbN3Ka9Z\\\",\\\"error-details\\\":\\\"nx5icXIl\\\",\\\"retry-button\\\":\\\"U1Vx9ja5\\\"}\";\n        // 1740346785275\n        var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack://test-task-nilsen/./src/app/providers/error-boundary/ErrorBoundary.module.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"error-boundary\": () => (/* binding */ _1),\n/* harmony export */   \"error-details\": () => (/* binding */ _2),\n/* harmony export */   \"retry-button\": () => (/* binding */ _3)\n/* harmony export */ });\n// extracted by mini-css-extract-plugin\nvar _1 = \"qbN3Ka9Z\";\nvar _2 = \"nx5icXIl\";\nvar _3 = \"U1Vx9ja5\";\n\n\n    if(true) {\n      (function() {\n        var localsJsonString = \"{\\\"error-boundary\\\":\\\"qbN3Ka9Z\\\",\\\"error-details\\\":\\\"nx5icXIl\\\",\\\"retry-button\\\":\\\"U1Vx9ja5\\\"}\";\n        // 1740348972618\n        var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack://test-task-nilsen/./src/app/providers/error-boundary/ErrorBoundary.module.scss?");
 
 /***/ }),
 
@@ -1245,7 +1245,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"lds-roller\": () => (/* binding */ _1)\n/* harmony export */ });\n// extracted by mini-css-extract-plugin\nvar _1 = \"K21Ipzgl\";\n\n\n    if(true) {\n      (function() {\n        var localsJsonString = \"{\\\"lds-roller\\\":\\\"K21Ipzgl\\\"}\";\n        // 1740346785272\n        var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack://test-task-nilsen/./src/widgets/page-loader/PageLoader.module.scss?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"lds-roller\": () => (/* binding */ _1)\n/* harmony export */ });\n// extracted by mini-css-extract-plugin\nvar _1 = \"K21Ipzgl\";\n\n\n    if(true) {\n      (function() {\n        var localsJsonString = \"{\\\"lds-roller\\\":\\\"K21Ipzgl\\\"}\";\n        // 1740348972613\n        var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ \"./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js\")(module.id, {});\n        // only invalidate when locals change\n        if (\n          module.hot.data &&\n          module.hot.data.value &&\n          module.hot.data.value !== localsJsonString\n        ) {\n          module.hot.invalidate();\n        } else {\n          module.hot.accept();\n        }\n        module.hot.dispose(function(data) {\n          data.value = localsJsonString;\n          cssReload();\n        });\n      })();\n    }\n  \n\n//# sourceURL=webpack://test-task-nilsen/./src/widgets/page-loader/PageLoader.module.scss?");
 
 /***/ }),
 
@@ -1350,7 +1350,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"src_app_app_App_tsx":"e2e23835a6ff90147953","src_entities_cat_index_ts":"ee4d5923cbbc62bbcbc7","src_pages_cats_ui_CatsPage_CatsPage_tsx-src_entities_cat_ui_Cat_module_scss-src_shared_ui_UIK-7d4c01":"d0799348338ca6fe412c","src_pages_favorites_ui_FavoritesPage_FavoritesPage_tsx-src_entities_cat_ui_Cat_module_scss-sr-4ceea0":"ecc0e679cb089a2edc00","src_pages_not-found_NotFoundPage_tsx":"7c44270e7827d1ae913a"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"src_app_app_App_tsx":"511d9126357d9e5613ac","src_entities_cat_index_ts":"09eaa5daf8e6c468f053","src_pages_cats_ui_CatsPage_CatsPage_tsx-src_entities_cat_ui_Cat_module_scss-src_shared_ui_UIK-7d4c01":"d4851c14e9e7b2453809","src_pages_favorites_ui_FavoritesPage_FavoritesPage_tsx-src_entities_cat_ui_Cat_module_scss-sr-4ceea0":"247203e78e54499e973f","src_pages_not-found_NotFoundPage_tsx":"0b7c92a542d281ff8c5d"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -1379,19 +1379,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("247b4d5f11d647bc7965")
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
+/******/ 		__webpack_require__.h = () => ("3dc433c9791ff041546e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -1858,25 +1846,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
-/******/ 				scriptUrl = document.currentScript.src;
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) {
-/******/ 					var i = scripts.length - 1;
-/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
-/******/ 				}
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 		__webpack_require__.p = "https://konstantine899.github.io/test-task-nilsen/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/css loading */
