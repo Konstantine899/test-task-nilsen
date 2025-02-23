@@ -47,7 +47,6 @@ const CatsPage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll, hasMore, isLoading]);
 
-  console.log(cats)
 
   return (
     <div className={classNames(styles["cats-page"])}>

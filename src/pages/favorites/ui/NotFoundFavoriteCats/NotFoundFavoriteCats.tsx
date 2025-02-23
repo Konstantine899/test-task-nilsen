@@ -1,6 +1,13 @@
 import React from "react";
 import * as styles from "./NotFoundFavoriteCats.module.scss";
 
+/**
+ * Компонент NotFoundFavoriteCats отображает сообщение о том,
+ * что у пользователя нет любимых котиков.
+ *
+ * @returns JSX-элемент с сообщением об отсутствии любимых котиков.
+ */
+
 const NotFoundFavoriteCats = () => {
   return (
     <div className={styles['not-found-container']}>
@@ -11,5 +18,8 @@ const NotFoundFavoriteCats = () => {
     </div>
   );
 };
+
+// Устанавливаем displayName для отладки
+NotFoundFavoriteCats.displayName = "NotFoundFavoriteCats";
 
 export default NotFoundFavoriteCats;
