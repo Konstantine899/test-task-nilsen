@@ -1,12 +1,16 @@
 import React, {Component, ReactNode} from "react";
 import * as styles from './ErrorBoundary.module.scss'
 
-// Тип пропсов
+/**
+ * Интерфейс пропсов для компонента ErrorBoundary.
+ */
 interface ErrorBoundaryProps {
     children: ReactNode;
 }
 
-// Тип состояния
+/**
+ * Интерфейс состояния для компонента ErrorBoundary.
+ */
 interface ErrorBoundaryState {
     hasError: boolean;
     error?: Error;
@@ -14,33 +18,64 @@ interface ErrorBoundaryState {
 }
 
 /**
- * Глобальный обработчик ошибок для перехвата проблем в дочерних компонентах.
+ * Компонент ErrorBoundary является глобальным обработчиком ошибок для перехвата проблем в дочерних компонентах.
+ *
+ * @extends {Component<ErrorBoundaryProps, ErrorBoundaryState>}
+ * @param props.children - Дочерние элементы, которые будут защищены от ошибок.
+ * @returns {ReactNode} JSX-элемент, содержащий либо дочерние компоненты, либо сообщение об ошибке.
  *
  * @remarks
  * Этот компонент предотвращает падение всего приложения при возникновении ошибок в дереве компонентов.
+ * Если ошибка возникает, она логируется, а пользователю показывается сообщение об ошибке.
+ * В режиме разработки additionally отображаются детали ошибки (трассировка стека).
  */
 
-export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-    // Инициализация состояния
+ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+    /**
+     * Конструктор для инициализации состояния компонента.
+     *
+     * @param {ErrorBoundaryProps} props - Пропсы компонента.
+     */
     constructor(props: ErrorBoundaryProps) {
         super(props);
+        /**
+         * Инициализация состояния:
+         * - hasError: false — нет ошибок.
+         * - error: undefined — объект ошибки не определён.
+         * - errorInfo: '' — информация об ошибке пустая.
+         */
         this.state = {hasError: false, error: undefined, errorInfo: ''};
     }
 
-    // Обработка ошибок в дереве компонентов
+    /**
+     * Статический метод для обработки ошибок в дереве компонентов.
+     * Устанавливает состояние компонента в случае ошибки.
+     *
+     * @param {Error} error - Объект ошибки.
+     * @returns {ErrorBoundaryState} Новое состояние компонента с hasError=true и сохранённой ошибкой.
+     */
     static getDerivedStateFromError(error: Error): ErrorBoundaryState {
-        return {hasError: true, error}
+        return {hasError: true, error} // Устанавливаем флаг ошибки и сохраняем объект ошибки
     }
 
-    // Логирование ошибок
+    /**
+     * Метод componentDidCatch вызывается после того, как ошибка была поймана.
+     * Логирует ошибку и сохраняет дополнительную информацию об ошибке (componentStack).
+     *
+     * @param {Error} error - Объект ошибки.
+     * @param {React.ErrorInfo} errorInfo - Информация об ошибке (например, componentStack).
+     */
     componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
-        console.error("ErrorBoundary поймал ошибку:", error, errorInfo);
+        console.error("ErrorBoundary поймал ошибку:", error, errorInfo); // Логируем ошибку
 
         this.setState({
-            errorInfo: errorInfo.componentStack,
+            errorInfo: errorInfo.componentStack, // Сохраняем трассировку стека или дефолтное значение ""
         });
 
-        // Защита от бесконечных ошибок
+        /**
+         * Сохраняем трассировку стека ошибки в состоянии.
+         * Если ошибка уже была поймана (hasError=true), предотвращаем повторное срабатывание.
+         */
         if (this.state.hasError) {
             console.warn("Предотвращено повторное срабатывание ErrorBoundary.");
             return;
@@ -49,9 +84,20 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     }
 
 
-    // Рендеринг
+    /**
+     * Метод render отвечает за рендеринг компонента.
+     * Если есть ошибка (hasError=true), отображается сообщение об ошибке.
+     * В противном случае отображаются дочерние элементы.
+     *
+     * @returns {ReactNode} JSX-элемент с сообщением об ошибке или дочерними компонентами.
+     */
     render(): ReactNode {
         const {hasError, error, errorInfo} = this.state;
+
+        /**
+         * Если произошла ошибка, отображаем сообщение об ошибке и кнопку "Попробовать снова".
+         * В режиме разработки дополнительно показываем детали ошибки (трассировку стека).
+         */
         if (hasError) {
             return (
                 <div className={styles["error-boundary"]}>
@@ -59,7 +105,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                     <button className={styles["retry-button"]} onClick={() => this.setState({hasError: false})}>
                         Попробовать снова
                     </button>
-                    {/* Вывод информации об ошибке в режиме разработки */}
+                    {/* Отображение деталей ошибки в режиме разработки */}
                     {__IS_DEV__ && (
                         <details className={styles["error-details"]}>
                             <summary>Детали ошибки</summary>
@@ -70,8 +116,13 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
                 </div>
             );
         }
+        /**
+         * Если ошибок нет, отображаем дочерние элементы.
+         */
         return this.props.children;
     }
 }
+
+
 
 export default ErrorBoundary;
