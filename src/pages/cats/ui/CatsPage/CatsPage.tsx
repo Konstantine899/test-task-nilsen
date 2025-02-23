@@ -6,7 +6,14 @@ import {catsAction, fetchCats} from "pages/cats";
 import {AppDispatch} from "app/providers/store-provider/config/store";
 import {getCats, getCatsHasMore, getCatsLoading, getCatsPage,} from "pages/cats/model/selectors/selectors";
 import {CatsList} from "pages/cats/ui/CatsList/CatsList";
-import {throttle} from 'shared/lib/throttle'
+import {throttle} from 'shared/lib/throttle';
+
+/**
+ * Компонент CatsPage отображает список котиков с поддержкой бесконечной прокрутки.
+ *
+ * @remarks
+ * Использует Redux для управления состоянием списка котиков, флагами загрузки и пагинацией.
+ */
 
 const CatsPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -15,6 +22,7 @@ const CatsPage = () => {
   const page = useSelector(getCatsPage);
   const isLoading = useSelector(getCatsLoading);
 
+  // Загрузка данных при монтировании компонента
   useEffect(() => {
     dispatch(fetchCats());
   }, [dispatch, page]);
@@ -35,7 +43,7 @@ const CatsPage = () => {
     // Добавляем слушатель прокрутки с throttle
     window.addEventListener("scroll", handleScroll);
 
-    // Удаляем слушатель при размонтировании компонента
+    // Удаление слушателя при размонтировании компонента
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll, hasMore, isLoading]);
 
@@ -50,6 +58,8 @@ const CatsPage = () => {
     </div>
   );
 };
+
+// Устанавливаем displayName для отладки
 CatsPage.displayName = "CatsPage";
 
 export default CatsPage;
