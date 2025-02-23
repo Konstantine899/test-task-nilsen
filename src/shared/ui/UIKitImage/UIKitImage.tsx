@@ -69,7 +69,7 @@ export const UiKitImage: React.FC<ImageProps> = memo((props: ImageProps) => {
     }
 
     const mods: Mods = {
-        [styles.hide]: isLoading || hasError
+        [styles.hide]: isLoading
     }
 
     // Если всё хорошо, показываем img
