@@ -1,8 +1,8 @@
 import React, {lazy, Suspense} from "react";
 import PageLoader from "widgets/page-loader/PageLoader";
-import ErrorBoundary from "app/providers/error-boundary/ErrorBoundary";
 import {BrowserRouter} from "react-router-dom";
-import {StoreProvider} from "app/providers/store-provider";
+import ErrorBoundary from "../providers/error-boundary/ErrorBoundary";
+import {StoreProvider} from "../providers/store-provider/ui/StoreProvider";
 
 /**
  * Компонент AppAsync представляет асинхронную версию основного приложения.

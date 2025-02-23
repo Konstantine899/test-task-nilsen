@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch} from "app/providers/store-provider/config/store";
+import {AppDispatch} from "app/providers/store-provider";
 import FavoriteIcon from "shared/assets/favorite.svg";
 import FavoriteBorderIcon from "shared/assets/favorite_border.svg";
 import {favoriteAction} from "features/favorite";
 import {classNames} from "shared/lib/classNames";
-import {isFavoriteSelector} from "features/favorite/model/selectors/selectors";
+import {isFavoriteSelector} from "../../model/selectors/selectors";
 import {ICat} from "pages/cats/model/types/ICat";
 
 interface FavoriteButtonProps {

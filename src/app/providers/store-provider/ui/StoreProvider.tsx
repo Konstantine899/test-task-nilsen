@@ -1,7 +1,7 @@
 import React, {ReactNode} from "react";
 import {Provider} from "react-redux";
-import {createReduxStore} from "app/providers/store-provider/config/store";
-import {IStateSchema} from "app/providers/store-provider/config/IStateSchema";
+import {createReduxStore} from "../config/store";
+import {IStateSchema} from "../config/IStateSchema";
 
 /**
  * Интерфейс пропсов для компонента StoreProvider.

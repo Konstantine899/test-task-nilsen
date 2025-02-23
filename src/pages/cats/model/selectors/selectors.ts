@@ -1,4 +1,4 @@
-import {RootState} from "app/providers/store-provider/config/store";
+import {RootState} from "app/providers/store-provider";
 import {createSelector} from "@reduxjs/toolkit";
 
 /**

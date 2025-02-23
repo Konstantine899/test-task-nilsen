@@ -1,5 +1,5 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {ExtraArgument, RootState,} from "app/providers/store-provider/config/store";
+import {ExtraArgument, RootState} from "app/providers/store-provider";
 import {ICat} from "pages/cats/model/types/ICat";
 
 /**

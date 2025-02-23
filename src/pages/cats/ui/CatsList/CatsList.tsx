@@ -1,10 +1,10 @@
 import React from "react";
-import {ICat} from "pages/cats/model/types/ICat";
+import {ICat} from "../../model/types/ICat";
 import * as styles from "./CatsList.module.scss";
 import {classNames} from "shared/lib/classNames";
 import {Cat} from "entities/cat";
 import {useSelector} from "react-redux";
-import {getCatsError, getCatsLoading,} from "pages/cats/model/selectors/selectors";
+import {getCatsError, getCatsLoading,} from "../../model/selectors/selectors";
 import {Skeleton} from "shared/ui/Skeleton/Skeleton";
 
 

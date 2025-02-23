@@ -3,9 +3,9 @@ import * as styles from "./CatsPage.module.scss";
 import {classNames} from "shared/lib/classNames";
 import {useDispatch, useSelector} from "react-redux";
 import {catsAction, fetchCats} from "pages/cats";
-import {AppDispatch} from "app/providers/store-provider/config/store";
-import {getCats, getCatsHasMore, getCatsLoading, getCatsPage,} from "pages/cats/model/selectors/selectors";
-import {CatsList} from "pages/cats/ui/CatsList/CatsList";
+import {AppDispatch} from "app/providers/store-provider";
+import {getCats, getCatsHasMore, getCatsLoading, getCatsPage} from "../../model/selectors/selectors";
+import {CatsList} from "../CatsList/CatsList";
 import {throttle} from 'shared/lib/throttle';
 
 /**

@@ -1,8 +1,8 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {fetchCats} from "pages/cats/model/api/fetchCats";
+import {fetchCats} from "../api/fetchCats";
 
-import {ICatsSchema} from "pages/cats/model/types/ICatsSchema";
-import {ICat} from "pages/cats/model/types/ICat";
+import {ICatsSchema} from "../types/ICatsSchema";
+import {ICat} from "../types/ICat";
 
 /**
  * Начальное состояние редюсера catsSlice.

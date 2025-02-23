@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {IFavoriteSchema} from "features/favorite/model/types/IFavoriteSchema";
+import {IFavoriteSchema} from "../types/IFavoriteSchema";
 import {ICat} from "pages/cats/model/types/ICat";
 
 /**

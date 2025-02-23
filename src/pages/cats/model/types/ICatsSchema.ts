@@ -1,4 +1,4 @@
-import {ICat} from "pages/cats/model/types/ICat";
+import {ICat} from "./ICat";
 
 /**
  * Схема состояния для страницы "Котики".

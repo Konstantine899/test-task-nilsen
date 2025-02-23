@@ -1,9 +1,9 @@
 import React from "react";
-import {ICat} from "pages/cats/model/types/ICat";
+import {ICat} from "../../../cats/model/types/ICat";
 import {classNames} from "shared/lib/classNames";
 import {Cat} from "entities/cat";
 import * as styles from "./FavoritesList.module.scss";
-import NotFoundFavoriteCats from "pages/favorites/ui/NotFoundFavoriteCats/NotFoundFavoriteCats";
+import NotFoundFavoriteCats from "../NotFoundFavoriteCats/NotFoundFavoriteCats";
 
 /**
  * Интерфейс пропсов для компонента FavoritesList.
