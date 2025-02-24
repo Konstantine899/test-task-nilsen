@@ -1,6 +1,6 @@
 import React, {lazy, Suspense} from "react";
 import PageLoader from "widgets/page-loader/PageLoader";
-import {HashRouter} from "react-router-dom";
+import {BrowserRouter, HashRouter} from "react-router-dom";
 import ErrorBoundary from "../providers/error-boundary/ErrorBoundary";
 import {StoreProvider} from "../providers/store-provider/ui/StoreProvider";
 
@@ -20,17 +20,28 @@ import {StoreProvider} from "../providers/store-provider/ui/StoreProvider";
 const AppLazy = lazy(() => import("./App"));
 
 export const AppAsync = () => {
-    console.log("__PUBLIC_PATH__",__PUBLIC_PATH__)
 
-    return (<ErrorBoundary> {/* Глобальная обработка ошибок */}
+    if(!__IS_DEV__){
+        return(<ErrorBoundary> {/* Глобальная обработка ошибок */}
+            <StoreProvider> {/* Провайдер Redux store */}
+                <HashRouter> {/* Маршрутизация через React Router */}
+                    <Suspense fallback={<PageLoader/>}> {/* Заглушка для ленивой загрузки */}
+                        <AppLazy/> {/* Ленивая загрузка основного приложения */}
+                    </Suspense>
+                </HashRouter>
+            </StoreProvider>
+        </ErrorBoundary>)
+    }
+
+    return <ErrorBoundary> {/* Глобальная обработка ошибок */}
         <StoreProvider> {/* Провайдер Redux store */}
-            <HashRouter> {/* Маршрутизация через React Router */}
+            <BrowserRouter basename={__PUBLIC_PATH__}> {/* Маршрутизация через React Router */}
                 <Suspense fallback={<PageLoader/>}> {/* Заглушка для ленивой загрузки */}
                     <AppLazy/> {/* Ленивая загрузка основного приложения */}
                 </Suspense>
-            </HashRouter>
+            </BrowserRouter>
         </StoreProvider>
-    </ErrorBoundary>)
+    </ErrorBoundary>
 };
 // Устанавливаем displayName для отладки
 AppAsync.displayName = "AppAsync";
